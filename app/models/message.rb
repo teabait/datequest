@@ -1,4 +1,5 @@
 class Message  < ActiveRecord::Base
-  has_one :sender, :class => 'User'
-  has_one :recipient, :class => 'User'
+  validates :sender_id, presence: true
+  validates :receiver_id, presence: true
+  validates :content, presence: true
 end

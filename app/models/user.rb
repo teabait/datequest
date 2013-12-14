@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
   validates :birthdate, presence: true
   validates :location, presence: true
   has_secure_password
+
+  def make
+  end
 end

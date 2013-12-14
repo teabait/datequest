@@ -1,6 +1,6 @@
-                class UsersController < ApplicationController
+class UsersController < ApplicationController
 
-  before_action :authenticated!, :set_user, :authorized!, except: [:new, :create]
+  before_action :authenticated!, :set_user, :authorized!, except: [:new, :create, :show]
 
   def index
   end
@@ -20,10 +20,12 @@
   end
 
   def show
+    @user = User.find(params[:id])
     render :show
   end
 
   def edit
+    render :edit
   end
 
   def update
@@ -49,7 +51,7 @@
   end
 
   def user_params
-    params.require(:user).permit(:username, :email, :age, :location, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :birthdate, :avatar, :blurb, :location, :password, :password_confirmation)
   end
 
 

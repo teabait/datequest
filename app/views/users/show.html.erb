@@ -1,16 +1,18 @@
 <h1>
   <div class="center side">
- <link href='http://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'>
-<div class="center">
-  <div class="gilded">
-    <div class="plaque"><h4> <%= @user.username.downcase %></h4></div>
+   <link href='http://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'>
+  <div class="center">
+    <img class = "gilded" src="<%=@user.avatar%>" alt="" width=200>
+    <h4> <%= @user.username.downcase %></h4>
   </div>
-  <h2><%= @user.username.downcase %> / <%= @user.age %> / <%= @user.location %></h2>
+  <h2><%= @user.username.downcase %> / <%= @user.birthdate %> / <%= @user.location %></h2>
   <h2> rank: cabin-boy </h2>
   <div class="blurb">
-    <p class="blurb">Foodie Myers-Briggs my eyes video games. Trying this for the first time my beard I have a crush on I know I listed more than 6 things Woody Allen, loyal my goofy smile is pretty awesome food seeing as many countries as possible. Self-deprecating humor home brewing foreign films working at a coffee shop Breaking Bad snowboarding.</p>
+    <p class="blurb">
+      <%= @user.blurb %>
+    </p>
   </div>
   <button>message me</button>
-  <button>edit profile</button>
+  <%= link_to 'edit profile', edit_user_path(@user), :method => :get%>
 </div>
 </h1>

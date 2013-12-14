@@ -1,23 +1,29 @@
 <div class="form">
-<% @user = User.new %>
-<% unless @user.errors.none? %>
+  <% @user = User.new %>
+  <% unless @user.errors.none? %>
   <% @user.errors.full_messages.each do |msg| %>
-    <%= msg %>
+  <%= msg %>
   <% end %>
-<% end %>
+  <% end %>
 
-<%= form_for @user do |f| %>
-  <%= f.label :name %>
+  <%= form_for @user do |f| %>
+  <%= f.label :username %>
   <%= f.text_field :username %>
 
   <%= f.label :email %>
   <%= f.email_field :email %>
 
-  <%= f.label :age %>
-  <%= f.text_field :age %>
+  <%= f.label :birthdate %>
+  <%= f.date_select :birthdate %>
 
   <%= f.label :location %>
   <%= f.text_field :location %>
+
+  <%= f.label :tell_us_about_yourself %>
+  <%= f.text_field :blurb %>
+
+  <%= f.label :photo_url %>
+  <%= f.text_field :avatar %>
 
   <%= f.label :password %>
   <%= f.password_field :password %>
@@ -25,6 +31,6 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
-  <%= f.submit  class: "submit"%>
-<% end %>
+  <%= f.submit  class: "Submit"%>
+  <% end %>
 </div>

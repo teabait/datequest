@@ -9,6 +9,14 @@ h1 {
   font-family: Helvetica;
 }
 
+.logo {
+  position: fixed;
+}
+
+nav {
+  width: 99%;
+}
+
 .top-bar {
   background-color: rgba(58, 58, 58, 1);
   min-width: 480px;
@@ -81,17 +89,16 @@ div.blurb {
 
 .gilded {
   margin: 2em auto;
-  height: 220px;
-  width: 160px;
+  width: 200px;
   background-color: #BD8400;
   border: 20px solid #D69A00;
   -webkit-box-shadow: 1px 1px 5px #888;
   -moz-box-shadow: 1px 1px 5px #888;
+  overflow: hide;
 }
 
 .gilded:before {
   content: "";
-  background: url("https://scontent-b-lga.xx.fbcdn.net/hphotos-prn1/942195_10200157551686422_1737445123_n.jpg");
   background-size: 145%;
   background-position: -2em;
   height: 180px;
@@ -150,4 +157,12 @@ h4 {
   font-family: 'Tangerine', cursive;
   color: rgba(0, 0, 0, .4);
   font-size: 1.2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
 }
