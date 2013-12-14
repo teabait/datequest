@@ -1,0 +1,10 @@
+class User < ActiveRecord::Base
+  validates :username, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates :age, presence: true
+  validates :location, presence: true
+  has_secure_password
+
+  def message(recipient)
+  end
+end
