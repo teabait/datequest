@@ -4,7 +4,4 @@ class User < ActiveRecord::Base
   validates :age, presence: true
   validates :location, presence: true
   has_secure_password
-
-  def message(recipient)
-  end
 end
