@@ -39,6 +39,10 @@ group :development, :test do
   gem 'ffaker'
 end
 
+group :development do
+  gem 'pry-rails'
+end
+
 group :test do
   gem 'shoulda-matchers'
 end

@@ -1,0 +1,13 @@
+<div class="form">
+<%= form_for @quest, url: {:action => "create"} do |f| %>
+  <%= select_date Date.today, prefix: :start_date %>
+<%= select_time(Time.now) %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :date_description %>
+  <%= f.text_field :description %>
+
+ <%= submit_tag("Send") %>
+  <% end %>
+</div>
