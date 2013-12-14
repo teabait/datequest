@@ -1,11 +1,10 @@
 require 'spec_helper'
 
-describe Date do
+describe Quest do
   describe "validations" do
-    it { should validate_presence_of(:username) }
-    it { should validate_presence_of(:email) }
-    it { should validate_presence_of(:birthdate) }
-    it { should have_secure_password }
-    it { should validate_presence_of(:location) }
+    it { should validate_presence_of(:date_time) }
+    it { should validate_presence_of(:description) }
+    it { should validate_presence_of(:date_creator) }
+    it { should validate_presence_of(:date_acceptor) }
   end
 end
