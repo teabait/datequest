@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131214173905) do
+ActiveRecord::Schema.define(version: 20131214174404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(version: 20131214173905) do
     t.string "rank"
   end
 
-  create_table "challenges_dates", force: true do |t|
+  create_table "challenges_quests", force: true do |t|
     t.boolean  "complete",     default: false
     t.integer  "completer_id"
     t.integer  "challenge_id"
-    t.integer  "date_id"
+    t.integer  "quest_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,12 +40,12 @@ ActiveRecord::Schema.define(version: 20131214173905) do
   end
 
   create_table "quests", force: true do |t|
-    t.datetime "date_time",                     null: false
+    t.datetime "date_time",                   null: false
     t.string   "location"
-    t.integer  "date_creator",                  null: false
-    t.integer  "date_acceptor",                 null: false
-    t.boolean  "accepted",      default: false
-    t.string   "description",                   null: false
+    t.integer  "creator",                     null: false
+    t.integer  "acceptor",                    null: false
+    t.boolean  "accepted",    default: false
+    t.string   "description",                 null: false
   end
 
   create_table "users", force: true do |t|
