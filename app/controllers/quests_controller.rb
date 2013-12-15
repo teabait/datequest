@@ -8,8 +8,8 @@ class QuestsController < ApplicationController
     quest_params = get_params
     quest_params[:creator] = current_user.id
     quest_params[:acceptor] = params[:user_id]
-    binding.pry
     @quest = Quest.new(quest_params)
+    @quest.assign_challenges(current_user)
     binding.pry
     if @quest.save
       redirect_to user_path(params[:user_id])
@@ -19,9 +19,16 @@ class QuestsController < ApplicationController
   end
 
   def index
-    @quests = Quest.where(acceptor: current_user.id, accepted: false, rejected: false)
+    @quests = Quest.where(
+      acceptor: current_user.id,
+      accepted: false,
+      rejected: false
+    )
     @sent_quests = Quest.where(creator: current_user.id)
-    @upcoming_quests = Quest.where(acceptor: current_user.id, accepted: true)
+    @upcoming_quests = Quest.where(
+      acceptor: current_user.id,
+      accepted: true
+    )
     render :index
   end
 

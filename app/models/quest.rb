@@ -4,6 +4,8 @@ class Quest < ActiveRecord::Base
   validates :acceptor, presence: true
   validates :description, presence: true
 
+  has_and_belongs_to_many :challenges
+
   def inviter
     inviter = User.find_by(id: self.creator)
   end
@@ -26,5 +28,12 @@ class Quest < ActiveRecord::Base
 
   def get_hour
     self.date_time.hour
+  end
+
+  def assign_challenges(user)
+    @challenges = Challenge.where(rank: user.rank).limit(3).order("RANDOM()")
+    @challenges.each do |challenge|
+      self.challenges << challenge
+    end
   end
 end

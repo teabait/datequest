@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131215201038) do
+ActiveRecord::Schema.define(version: 20131215220557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "challenges", force: true do |t|
-    t.string "description", null: false
-    t.string "rank"
+    t.string  "description",             null: false
+    t.integer "rank",        default: 0, null: false
   end
 
   create_table "challenges_quests", force: true do |t|
