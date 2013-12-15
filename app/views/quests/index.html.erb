@@ -1,3 +1,4 @@
+<h2><%=current_user.username%>'s pending quests</h2>
 <% @quests.each do |q| %>
   <div class="invite">
     <img class = "gilded" src="<%= q.inviter.avatar %>">
