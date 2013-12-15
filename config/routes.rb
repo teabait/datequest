@@ -3,5 +3,5 @@ DateQuest::Application.routes.draw do
     resources :quests, only: [:new, :create, :show, :index, :edit, :update]
   end
   resource :session, only: [:new, :create, :destroy]
-  root to: 'welcome#index'
+  root to: 'users#index'
 end
