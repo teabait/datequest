@@ -10,9 +10,8 @@ class QuestsController < ApplicationController
     quest_params[:acceptor] = params[:user_id]
     @quest = Quest.new(quest_params)
     @quest.assign_challenges(current_user)
-    binding.pry
     if @quest.save
-      redirect_to user_path(params[:user_id])
+      redirect_to user_quests_path(current_user.id)
     else
       redirect_to root_path
     end
