@@ -1,0 +1,17 @@
+<% @users.each do |user| %>
+<h1>
+  <div class="center side">
+   <link href='http://fonts.googleapis.com/css?family=Tangerine:700' rel='stylesheet' type='text/css'>
+  <div class="center">
+    <img class = "gilded" src="<%=user.avatar%>" alt="" width=200>
+  </div>
+  <h2><%= link_to user.username.downcase, user_path(user.id), :method => :get%>/ <%= user.birthdate %> / <%= user.location %></h2>
+  <h2> rank: <%= user.rank_name %> </h2>
+  <div class="blurb">
+    <p class="blurb">
+      <%= user.blurb %>
+    </p>
+  </div>
+</div>
+</h1>
+<% end %>

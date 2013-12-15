@@ -12,9 +12,14 @@
     <nav>
 <!--       <li><%= link_to image_tag('datequestlogo.svg'), 'index' %></li> -->
       <ul>
-        <li><%= link_to 'sign up', new_user_path, :method => :get, class: "nav-home" %>
-        <li><%= link_to 'login', new_session_path, :method => :get, class: "nav-home" %></li>
-        <li><%= link_to 'logout', session_path, :method => :delete, class: "nav-home" %></li>
+        <% if !logged_in? %>
+          <li><%= link_to 'sign up', new_user_path, :method => :get, class: "nav-home" %>
+          <li><%= link_to 'login', new_session_path, :method => :get, class: "nav-home" %></li>
+        <% end %>
+        <% if logged_in? %>
+          <li><%= link_to 'profile', user_path(current_user.id), :method => :get, class: "nav-home" %></li>
+          <li><%= link_to 'logout', session_path, :method => :delete, class: "nav-home" %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
