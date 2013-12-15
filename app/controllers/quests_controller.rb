@@ -47,6 +47,6 @@ class QuestsController < ApplicationController
   private
 
   def get_params
-    params.require(:quest).permit(:location, :description, :date_time)
+    params.require(:quest).permit(:location, :description, :quest_time, :quest_date)
   end
 end

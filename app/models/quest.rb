@@ -1,5 +1,6 @@
 class Quest < ActiveRecord::Base
-  validates :date_time, presence: true
+  validates :quest_time, presence: true
+  validates :quest_date, presence: true
   validates :creator, presence: true
   validates :acceptor, presence: true
   validates :description, presence: true
@@ -27,7 +28,7 @@ class Quest < ActiveRecord::Base
   end
 
   def get_hour
-    self.date_time.hour
+    self.quest_time.hour
   end
 
   def assign_challenges(user)
