@@ -5,15 +5,14 @@ class QuestsController < ApplicationController
   end
 
   def create
-    quest_win = quest_params
-    quest_win[:creator] = current_user.id
-    quest_win[:acceptor] = params[:user_id]
-    quest_win[:date_time] = '2004-10-19 10:23:54'
+    quest_params = get_params
+    quest_params[:creator] = current_user.id
+    quest_params[:acceptor] = params[:user_id]
     binding.pry
-    @quest = Quest.new(quest_win)
+    @quest = Quest.new(quest_params)
     binding.pry
     if @quest.save
-      redirect_to user_path(@user)
+      redirect_to user_path(params[:user_id])
     else
       redirect_to root_path
     end
@@ -21,7 +20,7 @@ class QuestsController < ApplicationController
 
   private
 
-  def quest_params
-    params.require(:quest).permit(:location, :description)
+  def get_params
+    params.require(:quest).permit(:location, :description, :date_time)
   end
 end

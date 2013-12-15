@@ -1,7 +1,7 @@
 <div class="form">
 <%= form_for @quest, url: {:action => "create"} do |f| %>
-  <%= select_date Date.today, prefix: :start_date %>
-<%= select_time(Time.now) %>
+  <%= f.label :date_time %>
+  <%= f.text_field :date_time %>
   <%= f.label :location %>
   <%= f.text_field :location %>
 
