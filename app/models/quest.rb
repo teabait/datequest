@@ -8,6 +8,10 @@ class Quest < ActiveRecord::Base
     inviter = User.find_by(id: self.creator)
   end
 
+  def invitee
+    invitee = User.find_by(id: self.acceptor)
+  end
+
   def get_year
     self.date_time.year
   end

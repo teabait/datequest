@@ -20,6 +20,7 @@ class QuestsController < ApplicationController
 
   def index
     @quests = Quest.where(acceptor: current_user.id)
+    @sent_quests = Quest.where(creator: current_user.id)
     render :index
   end
 

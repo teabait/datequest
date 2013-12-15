@@ -17,9 +17,38 @@
       <em><%= q.get_hour %> o'clock</em>
     </p>
 
-<%= button_to "Accept", { action: "update", id: q.id , accepted: true}, method: :patch%>
-
-<!-- change boolean rejected to true -->
-<%= button_to "Decline", { action: "update", id: q.id , rejected: true}, method: :patch%>
-
+    <%= button_to "Accept", { action: "update", id: q.id , accepted: true}, method: :patch%>
+    <%= button_to "Decline", { action: "update", id: q.id , rejected: true}, method: :patch%>
+  </div>
 <% end %>
+
+<h2><%=current_user.username%>'s sent quest invites</h2>
+
+<% @sent_quests.each do |q| %>
+  <div class="invite">
+    <img class = "gilded" src="<%= q.invitee.avatar %>">
+    <p class = "date-invite">
+      <em><%= q.invitee.rank %></em>
+      <em><%= q.invitee.username %></em>
+      Location:
+      <em><%= q.location %></em>
+      Description:
+      <em><%= q.description %></em>
+      on:
+      <em><%= q.get_month %></em>
+      <em><%= q.get_day %></em>,
+      <em><%= q.get_year %></em>
+      at
+      <em><%= q.get_hour %> o'clock</em>
+    </p>
+
+    <% if q.accepted %>
+      They accept your invite!
+    <% elsif q.rejected %>
+      They rejected your invite! Sadz.
+    <% else %>
+      PENDING
+    <% end %>
+  </div>
+<% end %>
+

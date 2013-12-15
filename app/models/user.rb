@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates :location, presence: true
   has_secure_password
 
-  def make
+  def ranks
+    ["cabin boy", "cook", "captain", "commander", "charizard"]
   end
 end

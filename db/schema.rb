@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131215162233) do
+ActiveRecord::Schema.define(version: 20131215201038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,11 +50,10 @@ ActiveRecord::Schema.define(version: 20131215162233) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "username",                    null: false
-    t.string   "email",                       null: false
-    t.string   "password_digest",             null: false
-    t.string   "location",                    null: false
-    t.string   "rank"
+    t.string   "username",                                null: false
+    t.string   "email",                                   null: false
+    t.string   "password_digest",                         null: false
+    t.string   "location",                                null: false
     t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -62,6 +61,7 @@ ActiveRecord::Schema.define(version: 20131215162233) do
     t.string   "blurb"
     t.string   "phone",           limit: nil
     t.date     "birthdate"
+    t.integer  "rank",                        default: 0, null: false
   end
 
 end
