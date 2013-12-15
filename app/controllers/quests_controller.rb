@@ -18,6 +18,11 @@ class QuestsController < ApplicationController
     end
   end
 
+  def index
+    @quests = Quest.where(acceptor: current_user.id)
+    render :index
+  end
+
   private
 
   def get_params

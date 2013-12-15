@@ -77,12 +77,19 @@ nav {
   margin: 0 auto;
 }
 
+.invite {
+  padding: 3em;
+}
 img {
   margin-top: 20px;
 }
 
 div.blurb {
   margin: 2em;
+}
+
+.avatar {
+  width: 200px;
 }
 
 /*SHAPES*/
@@ -164,5 +171,10 @@ a {
 }
 
 li {
-  display: inline-block;
+  list-style: none;
+}
+
+em {
+  font-family: 'Tangerine', cursive;
+  font-size: 3em;
 }

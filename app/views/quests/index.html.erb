@@ -1,0 +1,24 @@
+<% @quests.each do |q| %>
+  <div class="invite">
+    <img class = "gilded" src="<%= q.inviter.avatar %>">
+    <p class = "date-invite">
+      <em><%= q.inviter.rank %></em>
+      <em><%= q.inviter.username %></em>
+      invites you to
+      <em><%= q.location %></em>
+      so you two can
+      <em><%= q.description %></em>
+      on
+      <em><%= q.get_month %></em>
+      <em><%= q.get_day %></em>,
+      <em><%= q.get_year %></em>
+      at
+      <em><%= q.get_hour %> o'clock</em>
+    </p>
+<!-- change boolean accepted to true -->
+<button>ACCEPT</button>
+
+<!-- change boolean rejected to true -->
+<button>DECLINE</button>
+  </div>
+<% end %>
