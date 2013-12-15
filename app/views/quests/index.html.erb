@@ -52,3 +52,28 @@
   </div>
 <% end %>
 
+<h2><%=current_user.username%>'s sent upcoming quests!</h2>
+
+<% @upcoming_quests.each do |q| %>
+  <div class="invite">
+    <img class = "gilded" src="<%= q.inviter.avatar %>">
+    <p class = "date-invite">
+      You are going with
+      <em><%= q.inviter.username %></em>
+      to
+      <em><%= q.location %></em>
+      so you two can
+      <em><%= q.description %></em>
+      on
+      <em><%= q.get_month %></em>
+      <em><%= q.get_day %></em>,
+      <em><%= q.get_year %></em>
+      at
+      <em><%= q.get_hour %> o'clock</em>
+    </p>
+
+ YAY!
+  </div>
+<% end %>
+
+
