@@ -16,10 +16,10 @@
       at
       <em><%= q.get_hour %> o'clock</em>
     </p>
-<!-- change boolean accepted to true -->
-<button>ACCEPT</button>
+
+<%= button_to "Accept", { action: "update", id: q.id , accepted: true}, method: :patch%>
 
 <!-- change boolean rejected to true -->
-<button>DECLINE</button>
-  </div>
+<%= button_to "Decline", { action: "update", id: q.id , rejected: true}, method: :patch%>
+
 <% end %>

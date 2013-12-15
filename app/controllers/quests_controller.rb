@@ -23,6 +23,19 @@ class QuestsController < ApplicationController
     render :index
   end
 
+  def update
+    @quest = Quest.find_by(id: params[:id])
+    if params[:rejected] == "true"
+      @quest.rejected = true
+      @quest.accepted = false
+    else
+      @quest.accepted = true
+      @quest.rejected = false
+    end
+    @quest.save
+    redirect_to user_quests_path
+  end
+
   private
 
   def get_params
