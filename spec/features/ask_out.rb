@@ -10,7 +10,7 @@ feature "user ask out another user" do
       fill_in 'Email', with: remy.email
       fill_in 'Password', with:'secret'
       click_button 'Login'
-    visit user_path(lady.id)
+      visit user_path(lady.id)
     end
     click_link('ask')
     expect(current_path).to eq new_user_quest_path(lady.id)

@@ -13,7 +13,7 @@ describe Quest do
     it { should validate_presence_of(:acceptor) }
   end
 
-  describe "challenges" do
+  describe "#challenges" do
     it "has no challenges at the beginning" do
       expect(@quest.challenges.count).to eq(0)
     end

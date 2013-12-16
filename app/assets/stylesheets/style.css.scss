@@ -1,12 +1,19 @@
+$primary-font: Helvetica, sans-serif;
+$fancy-font: 'Tangerine', cursive;
+$primary-color: rgba(58, 58, 58, 1);
+$shadow: rgba(0, 0, 0, .2);
+$glow: rgba(255, 255, 255, .4);
+$main-background: rgba(251,251,251,1);
+
 body {
   background-color: rgba(251,251,251,1);
   text-align: center;
   width: 100%;
 }
 h1 {
-  color: rgba(58, 58, 58, 1);
+  color: $primary-color;
   z-index: 100;
-  font-family: Helvetica;
+  font-family: $primary-font;
 }
 
 .logo {
@@ -29,7 +36,7 @@ nav {
 }
 
 .top-bar {
-  background-color: rgba(58, 58, 58, 1);
+  background-color: $primary-color;
   min-width: 480px;
   margin-left:0;
   padding: 0;
@@ -48,7 +55,7 @@ nav {
   min-height: 300px;
   clear: both;
   position: relative;
-  background-color: rgba(251,251,251,1);
+  background-color: $main-background;
   width: 99%;
 }
 
@@ -95,7 +102,7 @@ img {
   margin-top: 20px;
 }
 
-div.blurb {
+.blurb {
   margin: 2em;
 }
 
@@ -124,8 +131,8 @@ div.blurb {
   display: block;
   border: 20px solid goldenrod;
   border-radius: 50%;
-  -webkit-box-shadow: -1px -1px 1px rgba(0, 0, 0, .2);
-  -moz-box-shadow: -1px -1px 1px rgba(0, 0, 0, .2);
+  -webkit-box-shadow: -1px -1px 1px $shadow;
+  -moz-box-shadow: -1px -1px 1px $shadow;
 }
 
 .gilded-extra {
@@ -138,8 +145,8 @@ div.blurb {
   display: block;
   border: 2px solid gold;
   border-radius: 50%;
-   -webkit-box-shadow: 1px 1px 10px rgba(255, 255, 255, 1);
-   -moz-box-shadow: 1px 1px 10px rgba(255, 255, 255, 1);
+   -webkit-box-shadow: 1px 1px 10px $main-background;
+   -moz-box-shadow: 1px 1px 10px $main-background;
 }
 
 .plaque {
@@ -153,8 +160,8 @@ div.blurb {
   display: block;
   border-radius: 50%;
   z-index: 10;
-  -webkit-box-shadow: 1px 1px 20px rgba(255, 255, 255, .4);
-  -moz-box-shadow: 1px 1px 20px rgba(255, 255, 255, .4);
+  -webkit-box-shadow: 1px 1px 20px $glow;
+  -moz-box-shadow: 1px 1px 20px $glow;
 }
 
 .plaque:before {
@@ -172,7 +179,7 @@ h4 {
   z-index: 100;
   position: relative;
   margin-top: .4em;
-  font-family: 'Tangerine', cursive;
+  font-family: $fancy-font;
   color: rgba(0, 0, 0, .4);
   font-size: 1.2em;
 }
@@ -186,6 +193,6 @@ li {
 }
 
 em {
-  font-family: 'Tangerine', cursive;
+  font-family: $fancy-font;
   font-size: 3em;
 }

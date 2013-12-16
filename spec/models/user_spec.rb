@@ -9,6 +9,4 @@ describe User do
     it { should validate_presence_of(:location) }
     it { should validate_presence_of(:rank) }
   end
-  let(:remy) { FactoryGirl.create(:user, username: "remy") }
-  let(:daffodil) { FactoryGirl.create(:user, username: "daffodil") }
 end
