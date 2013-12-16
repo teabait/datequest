@@ -11,10 +11,17 @@ feature "user ask out another user" do
       fill_in 'Password', with:'secret'
       click_button 'Login'
     visit user_path(lady.id)
-    #click_link('ask')
     end
     click_link('ask')
     expect(current_path).to eq new_user_quest_path(lady.id)
+    within "form" do
+      fill_in 'Location', with: "a bar"
+      fill_in 'quest_description', with: "cuddle"
+      click_button "Send"
+    end
+    expect(current_path).to eq user_quests_path(remy.id)
+    page.should have_content('a bar')
+    page.should have_content('cuddle')
   end
 end
 
