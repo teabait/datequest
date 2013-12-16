@@ -13,7 +13,7 @@
     </p>
   </div>
   <% if current_user != @user %>
-    <%= link_to 'Ask Me Out!', new_user_quest_path(@user), :method => :get%>
+    <%= link_to 'ask out', new_user_quest_path(@user), :method => :get, :id => "ask"%>
   <% end %>
   <% if current_user == @user %>
     <%= link_to 'edit profile', edit_user_path(@user), :method => :get%>
