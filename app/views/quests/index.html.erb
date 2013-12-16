@@ -12,7 +12,7 @@
       on
       <em><%= q.quest_date %></em>
       at
-      <em><%= q.get_hour %> o'clock</em>
+      <em><%= q.get_hour %></em>
     </p>
 
     <%= button_to "Accept", { action: "update", id: q.id , accepted: true}, method: :patch%>
@@ -35,7 +35,7 @@
       on:
       <em><%= q.quest_date %></em>
       at
-      <em><%= q.get_hour %> o'clock</em>
+      <em><%= q.get_hour %></em>
     </p>
 
     <% if q.accepted %>
@@ -63,7 +63,7 @@
       on
       <em><%= q.quest_date %></em>
       at
-      <em><%= q.get_hour %> o'clock</em>
+      <em><%= q.get_hour %></em>
     </p>
 
  YAY!

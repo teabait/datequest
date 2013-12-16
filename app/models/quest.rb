@@ -28,7 +28,18 @@ class Quest < ActiveRecord::Base
   end
 
   def get_hour
-    self.quest_time.hour
+    hour = self.quest_time.hour
+    if hour > 12
+      hour -= 12
+      hour = hour.to_s
+      hour = hour + "PM"
+    elsif hour = 24
+      hour = "midnight"
+    else
+      hour = hour.to_s
+      hour = hour + "AM"
+    end
+    return hour
   end
 
   def assign_challenges(user)
