@@ -1,7 +1,7 @@
 <div class="form">
 <%= form_for @quest, url: {:action => "create"} do |f| %>
   <%= f.label :quest_date %>
-  <%= f.date_select :quest_date %>
+  <%= f.date_select :quest_date, :start_year => Date.current.year %>
 
   <%= f.label :quest_time %>
   <%= f.time_select :quest_time %>

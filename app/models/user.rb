@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :birthdate, presence: true
   validates :location, presence: true
+  validates :rank, presence: true
   has_secure_password
 
   def rank_name
