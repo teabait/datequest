@@ -24,4 +24,12 @@ module TestHelper
       click_button 'Login'
     end
   end
+
+  def fill_quest_form
+    within "form" do
+      fill_in 'Location', with: "a bar"
+      fill_in 'quest_description', with: "cuddle"
+      click_button "Send"
+    end
+  end
 end

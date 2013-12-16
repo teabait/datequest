@@ -3,7 +3,7 @@
   <div class="invite">
     <img class = "gilded" src="<%= q.inviter.avatar %>">
     <p class = "date-invite">
-      <em><%= q.inviter.rank %></em>
+      <em><%= q.inviter.rank_name%></em>
       <em><%= q.inviter.username %></em>
       invites you to
       <em><%= q.location %></em>
@@ -26,7 +26,7 @@
   <div class="invite">
     <img class = "gilded" src="<%= q.invitee.avatar %>">
     <p class = "date-invite">
-      <em><%= q.invitee.rank %></em>
+      <em><%= q.invitee.rank_name%></em>
       <em><%= q.invitee.username %></em>
       Location:
       <em><%= q.location %></em>

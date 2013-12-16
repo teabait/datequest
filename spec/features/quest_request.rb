@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-feature "user ask out another user" do
-  scenario "Signed in and goes to another user's page" do
+feature "quest requests" do
+  scenario "User asks out another user" do
     remy = FactoryGirl.create(:user)
     lady = FactoryGirl.create(:user)
     visit root_path
