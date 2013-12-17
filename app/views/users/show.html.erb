@@ -5,7 +5,7 @@
     <img class = "gilded" src="<%=@user.avatar%>" alt="" width=200>
     <h4> <%= @user.username.downcase %></h4>
   </div>
-  <h2><%= @user.username.downcase %> / <%= @user.birthdate %> / <%= @user.location %></h2>
+  <h2><%= @user.username.downcase %> / <%= @user.age %> / <%= @user.location %></h2>
   <h2> rank: <%= @user.rank_name %> </h2>
   <div class="blurb">
     <p class="blurb">
@@ -18,6 +18,8 @@
   <% end %>
   <% if current_user == @user %>
     <%= link_to 'edit profile', edit_user_path(@user), :method => :get%>
+    <%= link_to 'quests', user_quests_path(@user), :method => :get%>
+    <%= link_to 'messages', user_messages_path(@user), :method => :get%>
   <% end %>
 </div>
 </h1>

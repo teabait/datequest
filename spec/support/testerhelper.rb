@@ -1,10 +1,10 @@
 module TestHelper
-  def sign_up
+  def sign_up(user)
     visit root_path
     click_link "sign up"
     within "form" do
-      fill_in 'Username', with: 'remy'
-      fill_in 'Email', with: 'remy@remy.com'
+      fill_in 'Username', with: user
+      fill_in 'Email', with: '#{user}@blah.com'
       find('#user_birthdate_1i').find(:xpath, 'option[2]').select_option
       fill_in 'Location', with: 'Oakland'
       fill_in 'user_blurb', with: 'puppies puppies'
@@ -15,11 +15,11 @@ module TestHelper
     end
   end
 
-  def sign_in
+  def sign_in(user)
     visit root_path
     click_link "login"
     within "form" do
-      fill_in 'Email', with: 'remy@remy.com'
+      fill_in 'Email', with: '#{user}@blah.com'
       fill_in 'Password', with:'secret'
       click_button 'Login'
     end
