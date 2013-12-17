@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authenticated!, :set_user, :authorized!, except: [:new, :create, :show, :index]
 
   def index
-    @users = User.all
+    @users = User.where(rank: current_user.rank)
     render :index
   end
 
