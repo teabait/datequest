@@ -6,7 +6,7 @@ $glow: rgba(255, 255, 255, .4);
 $main-background: rgba(251,251,251,1);
 
 body {
-  background-color: rgba(251,251,251,1);
+  background-color: seagreen;
   text-align: center;
   width: 100%;
 }
@@ -53,13 +53,13 @@ nav {
   clear: both;
   position: relative;
   background-color: $main-background;
-  width: 99%;
+  width: 100%;
 }
 
 .side {
   margin: 3% 0 3%;
   padding: 1% 0 3%;
-  width: 500px;
+  width: 600px;
   height: 550px;
   border: 1px black;
   background-color: rgba(230, 219, 195, .3);
@@ -95,12 +95,41 @@ nav {
 .invite {
   padding: 3em;
 }
+
+.clear {
+  clear: both;
+}
+
+.stretch {
+  right: 0;
+  left: 0;
+  background-color: rgba(230, 219, 195, .3);
+  height: 300px;
+  border: 1px solid black;
+}
+
+.small-column {
+  width: 200px;
+  min-height: 100px;
+  background-color: $main-background;
+  overflow: auto;
+  margin: 1em 2em;
+}
+
+.mid-column {
+  width: 250px;
+  border: 2px dotted orange;
+  overflow: auto;
+}
+
 img {
   margin-top: 20px;
 }
 
 .blurb {
   margin: 2em;
+  border: 1px solid black;
+  clear: both;
 }
 
 .avatar {
@@ -110,7 +139,7 @@ img {
 /*SHAPES*/
 
 .gilded {
-  margin: 2em auto;
+  margin: 1em auto;
   width: 200px;
   background-color: #BD8400;
   border: 20px solid #D69A00;
@@ -172,6 +201,11 @@ img {
   z-index: -1;
 }
 
+h3 {
+  font-family: $primary-font;
+    font-size: 2em;
+}
+
 h4 {
   z-index: 100;
   position: relative;
@@ -185,6 +219,14 @@ a {
   text-decoration: none;
 }
 
+a.profile-button {
+    border: 1px solid black;
+    display: block;
+    color: pink;
+    width: 60%;
+    margin: .5em auto;
+  }
+
 li {
   list-style: none;
 }
@@ -192,4 +234,25 @@ li {
 em {
   font-family: $fancy-font;
   font-size: 3em;
+}
+
+/*FORM*/
+
+label {
+  float: left;
+  margin: 10px auto;
+  font-family: $primary-font;
+}
+
+input {
+  float: right;
+   margin: 10px auto;
+}
+
+input[type=submit] {
+  clear: both;
+}
+
+header {
+  padding: 1em;
 }
