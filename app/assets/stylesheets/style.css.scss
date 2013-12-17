@@ -1,39 +1,69 @@
-$primary-font: Helvetica, sans-serif;
-$fancy-font: 'Tangerine', cursive;
+/* VARIABLES */
+
+$primary-font: 'Open Sans', Helvetica, sans-serif;
+$fancy-font: 'Roboto Slab', serif;
 $primary-color: rgba(58, 58, 58, 1);
 $shadow: rgba(0, 0, 0, .2);
 $glow: rgba(255, 255, 255, .4);
 $main-background: rgba(251,251,251,1);
+$highlight: indianred;
+$gilded-main: #BD8400;
+/* LAYOUT */
 
 body {
-  background-color: seagreen;
+  width: 100%;
   text-align: center;
+
+
+}
+
+section {
+  margin: 10px;
+}
+
+.main {
+  margin: 125px auto;
+  padding-top: 3em;
+  min-height: 300px;
+  clear: both;
+  position: relative;
+  background-color: $main-background;
   width: 100%;
 }
-h1 {
-  color: $primary-color;
+
+.giant-box {
+  top: 10em;
+  padding: 50px;
+  margin: 0 30%;
+  position: fixed;
+  width: 500px;
+  height: 300px;
   z-index: 100;
-  font-family: $primary-font;
+  background-color: rgba(255, 156, 33, 1);
+  border-radius: 10px;
 }
 
-
-nav {
-  bottom: 0;
-  width: 99%;
-  position: absolute;
-
-  li {
-  display: inline;
-  }
-
-  a {
-  color: white;
-  margin: 3em 7em;
-  }
+.pretty-ribbon {
+  top: 20%;
+  padding: 70px;
+  margin: 2em;
+  position: fixed;
+  width: 300px;
+  height: 100px;
+  z-index: 100;
+  border: 1px dotted white;
+  border-radius: 10px;
 }
+
+.top {
+  position: fixed;
+  top: 440px;
+  margin: 0 12em;
+}
+
 
 .top-bar {
-  background-color: $primary-color;
+  background-color: gray;
   min-width: 480px;
   margin-left:0;
   padding: 0;
@@ -47,35 +77,22 @@ nav {
   z-index: 100;
 }
 
-.main {
-  margin: 175px auto;
-  min-height: 300px;
-  clear: both;
-  position: relative;
-  background-color: $main-background;
+.wrapper {
   width: 100%;
+  margin: 75px auto 0;
+  text-align: center;
 }
 
 .side {
   margin: 3% 0 3%;
   padding: 1% 0 3%;
-  width: 600px;
+  width: 40%;
   height: 550px;
   border: 1px black;
   background-color: rgba(230, 219, 195, .3);
   border-radius: 15px;
   min-width: 200px;
-}
-
-.half {
-  margin: 3% 0 3%;
-  padding: 1% 0 3%;
-  width: 600px;
-  height: 550px;
-  border: 1px black;
-  background-color: rgba(230, 219, 195, .3);
-  border-radius: 15px;
-  min-width: 200px;
+  overflow: scroll;
 }
 
 .left {
@@ -84,175 +101,227 @@ nav {
 }
 
 .right {
+  width: 30%;
   float: right;
   margin-right: 10%;
 }
 
-.center {
+.grocery_list {
+  margin-top: 1em;
+}
+.recipe-box {
+  margin: 0 auto;
+  padding-bottom: 50px;
+  width: 80%;
+  height: 100%;
+  height: 1%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.single-recipe {
+  width: 170px;
+  height: 170px;
+  margin: 20px 10px 0;
+  background-color: rgba(230, 219, 195, .3);
+  position: relative;
+  display: inline-block;
+  float: left;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
+}
+
+/* NAV */
+
+nav {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-family: $fancy-font;
+  bottom: 3em;
+  width: 99%;
+  position: absolute;
+
+  li {
+  display: inline;
+  }
+
+  a {
+  color: white;
+  margin: 3em 10em;
+  }
+}
+
+.extra:before, .extra:after {
+    font-family: $fancy-font;
+    content: "\00d7";  /* Some fancy character */
+    color: gold;
+}
+
+.extra:before {
+    margin-right: 10px;
+}
+.extra:after {
+    margin-left: 10px;
+}
+
+li {
+  list-style-type: none;
+  line-height: 1.2em;
+}
+
+/* TEXT */
+
+header {
   margin: 0 auto;
 }
 
-.invite {
-  padding: 3em;
+p {
+  line-height: 1.2em;
 }
 
-.clear {
-  clear: both;
+.info-type {
+  font-family: $fancy-font;
+  text-align: center;
+  line-height: 1.2em;
+  color: rgba(0,0,0,.5);
 }
 
-.stretch {
-  right: 0;
-  left: 0;
-  background-color: rgba(230, 219, 195, .3);
-  height: 300px;
-  border: 1px solid black;
+.ingredients {
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  font-size: 13px;
+  color: rgba(0,0,0,.5);
 }
 
-.small-column {
-  width: 200px;
-  min-height: 100px;
-  background-color: $main-background;
-  overflow: auto;
-  margin: 1em 2em;
+h1 {
+  font-family: $primary-font;
+  font-size: 3em;
+  -webkit-text-shadow: 2px 2px rgba(0,0,0,.2);
+  -moz-text-shadow: 2px 2px rgba(0,0,0,.2);
+  text-shadow: 2px 2px rgba(0,0,0,.2);
+  color: rgba(255,255,255,1);
+  margin-bottom: .5em;
 }
 
-.mid-column {
-  width: 250px;
-  border: 2px dotted orange;
-  overflow: auto;
-}
+h2 {
+  font-family:  $primary-font;
+  font-size: 1em;
+  color: rgba(0,0,0,.75);
 
-img {
-  margin-top: 20px;
-}
-
-.blurb {
-  margin: 2em;
-  border: 1px solid black;
-  clear: both;
-}
-
-.avatar {
-  width: 200px;
-}
-
-/*SHAPES*/
-
-.gilded {
-  margin: 1em auto;
-  width: 200px;
-  background-color: #BD8400;
-  border: 20px solid #D69A00;
-  -webkit-box-shadow: 1px 1px 5px #888;
-  -moz-box-shadow: 1px 1px 5px #888;
-  overflow: hide;
-}
-
-.gilded:before {
-  content: "";
-  background-size: 145%;
-  background-position: -2em;
-  height: 180px;
-  width: 120px;
-  display: block;
-  border: 20px solid goldenrod;
-  border-radius: 50%;
-  -webkit-box-shadow: -1px -1px 1px $shadow;
-  -moz-box-shadow: -1px -1px 1px $shadow;
-}
-
-.gilded-extra {
-  background-color: transparent;
-  position: absolute;
-  top: 7.5em;
-  margin: 0 .8em;
-  height: 190px;
-  width: 130px;
-  display: block;
-  border: 2px solid gold;
-  border-radius: 50%;
-   -webkit-box-shadow: 1px 1px 10px $main-background;
-   -moz-box-shadow: 1px 1px 10px $main-background;
-}
-
-.plaque {
-  position: absolute;
-  margin-top: -1em;
-  margin-left: .5em;
-  padding-bottom: .3em;
-  width: 140px;
-  height: 25px;
-  background-color: #E9B807;
-  display: block;
-  border-radius: 50%;
-  z-index: 10;
-  -webkit-box-shadow: 1px 1px 20px $glow;
-  -moz-box-shadow: 1px 1px 20px $glow;
-}
-
-.plaque:before {
-  content: "";
-  width: 130px;
-  height: 30px;
-  background-color: #E9B807;
-  display: inline-block;
-  position: absolute;
-  margin-left: -4em;
-  z-index: -1;
 }
 
 h3 {
-  font-family: $primary-font;
-    font-size: 2em;
+  margin-bottom: 1em;
+  letter-spacing: 1px;
+  font-family: $fancy-font;
+  font-size: 1.7em;
+  color: $highlight;
+
 }
 
-h4 {
-  z-index: 100;
-  position: relative;
-  margin-top: .4em;
-  font-family: $fancy-font;
-  color: rgba(0, 0, 0, .4);
-  font-size: 1.2em;
+/* IMAGES */
+.avatar{
+    width: 200px;
+    border: 10px solid $gilded-main;
+    border-radius: 50%;
 }
+.avatar:after {
+  content: "";
+  width: 200px;
+  height: 500px;
+  background-color: red;
+}
+
+.large-image {
+  border: 5px solid rgba(230, 219, 195, .3);
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
+}
+
+/* LINKS */
 
 a {
   text-decoration: none;
+  color: rgba(0,0,0,.5);
 }
 
-a.profile-button {
-    border: 1px solid black;
-    display: block;
-    color: pink;
-    width: 60%;
-    margin: .5em auto;
-  }
-
-li {
-  list-style: none;
+a:hover {
+  color: $highlight;
 }
 
-em {
-  font-family: $fancy-font;
-  font-size: 3em;
+h1 a {
+  color: rgba(255,255,255,1);
 }
 
-/*FORM*/
+a.heart {
+  margin: 1.5em .5em 1em 0;
+  float: right;
+  color: rgba(254, 153, 168, 1);
+}
 
-label {
+a.heart:hover {
+  transform:scale(1.2);
+  -moz-transform:scale(1.2);
+  -webkit-transform:scale(1.2);
+}
+
+h1 a:hover {
+  color: rgba(255, 156, 33, 1);
+}
+
+/* FORM */
+
+.form {
+  width: 260px;
+  margin: 0 auto 7em;
+  color: rgba(0,0,0,.5);
+}
+
+label{
   float: left;
-  margin: 10px auto;
-  font-family: $primary-font;
+  margin: .2em 0 1em;
+  font-family: $fancy-font;
+  font-size: .8em;
+  clear: both;
 }
 
 input {
   float: right;
-   margin: 10px auto;
+
 }
 
 input[type=submit] {
-  clear: both;
+  font-family: $fancy-font;
 }
 
-header {
-  padding: 1em;
+.submit {
+  margin-top: .5em;
+  width: 260px;
+  background-color: $highlight;
+  border: 0;
+  padding: .5em;
+  color: white;
+  clear: both;
+  font-size: 1em;
+
+}
+
+h3:before, h3:after {
+    font-family: $fancy-font;
+    content: "\00d7";  /* Some fancy character */
+    color: gold;
+}
+
+h3:before {
+    margin-right: 10px;
+}
+h3:after {
+    margin-left: 10px;
+}
+
+.submit:hover {
+  background-color: gold;
+  cursor: pointer;
 }

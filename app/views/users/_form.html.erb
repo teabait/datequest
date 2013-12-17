@@ -7,30 +7,30 @@
   <% end %>
 
   <%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+  <li><%= f.label :username %></li>
+  <li><%= f.text_field :username %></li>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+  <li><%= f.label :email %></li>
+  <li><%= f.email_field :email %></li>
 
-  <%= f.label :birthdate %>
-  <%= f.date_select :birthdate, :start_year => Date.current.year - 60, :end_year => Date.current.year %>
+  <li><%= f.label :birthdate %></li>
+  <li><%= f.date_select :birthdate, :start_year => Date.current.year - 60, :end_year => Date.current.year %></li>
 
-  <%= f.label :location %>
-  <%= f.text_field :location %>
+  <li><%= f.label :location %></li>
+  <li><%= f.text_field :location %></li>
 
-  <%= f.label :tell_us_about_yourself %>
-  <%= f.text_field :blurb %>
+  <li><%= f.label :tell_us_about_yourself %></li>
+  <li><%= f.text_field :blurb %></li>
 
-  <%= f.label :photo_url %>
-  <%= f.text_field :avatar %>
+ <li> <%= f.label :photo_url %></li>
+  <li><%= f.text_field :avatar %></li>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <li><%= f.label :password %></li>
+  <li><%= f.password_field :password %></li>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <li><%= f.label :password_confirmation %></li>
+ <li> <%= f.password_field :password_confirmation %></li>
 
-  <%= f.submit  class: "Submit"%>
+ <li> <%= f.submit  class: "Submit"%></li>
   <% end %>
 </div>

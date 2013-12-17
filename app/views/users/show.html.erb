@@ -1,7 +1,7 @@
 
-  <div class="center side">
-    <div class="left mid-column">
-      <img class = "gilded" src="<%=@user.avatar%>" alt="" width=200>
+  <div>
+    <div>
+      <img class="avatar" src="<%=@user.avatar%>" alt="" >
       <% if current_user == @user %>
         <%= link_to 'edit profile', edit_user_path(@user), :method => :get, class: "profile-button"%>
         <%= link_to 'quests', user_quests_path(@user), :method => :get, class: "profile-button"%>
@@ -12,11 +12,11 @@
         <%= link_to 'message me', new_user_message_path(@user), :method => :get, :id => "message", class: "profile-button"%>
       <% end %>
     </div>
-      <div class="right small-column">
+      <div>
         <h2><%= @user.username.downcase %> / <%= @user.age %> / <%= @user.location %></h2>
         <h2> rank: <%= @user.rank_name %> </h2>
       </div>
-    <div class="right small-column">
+    <div>
       <p>
         <%= @user.blurb %>
       </p>
