@@ -34,9 +34,11 @@ class QuestsController < ApplicationController
   def update
     @quest = Quest.find_by(id: params[:id])
     if params[:rejected] == "true"
+      flash[:notice] = "You rejected the user"
       @quest.rejected = true
       @quest.accepted = false
     else
+      flash[:notice] = "You are going to go on a date!"
       @quest.accepted = true
       @quest.rejected = false
     end
