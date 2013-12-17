@@ -1,2 +1,5 @@
 <h3>Sign up</h3>
 <%= render 'form' %>
+<% flash.each do|name, msg| %>
+  <%= msg %>
+<% end %>

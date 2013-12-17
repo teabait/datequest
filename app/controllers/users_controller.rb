@@ -14,8 +14,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.rank = @user.ranks[0]
-
-    if @user.save
+    if @user.age < 18
+      redirect_to new_user_path, notice: "YOU ARE TOO YOUNG"
+    elsif @user.save
       redirect_to root_path
     else
       render :new

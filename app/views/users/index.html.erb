@@ -6,7 +6,7 @@
     <div class="center">
       <img class = "gilded" src="<%=user.avatar%>" alt="" width=200>
     </div>
-    <h2><%= link_to user.username.downcase, user_path(user.id), :method => :get %>/ <%= user.birthdate %> / <%= user.location %></h2>
+    <h2><%= link_to user.username.downcase, user_path(user.id), :method => :get %>/ <%= user.age %> / <%= user.location %></h2>
   </div>
   </h1>
   <% end %>
