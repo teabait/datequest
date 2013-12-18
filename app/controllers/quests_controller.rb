@@ -1,3 +1,4 @@
+
 class QuestsController < ApplicationController
   def new
     @quest = Quest.new
@@ -11,7 +12,7 @@ class QuestsController < ApplicationController
     @quest = Quest.new(quest_params)
     @quest.assign_challenges(current_user)
     # @quest.delay(run_at: @quest.quest_date).text_challenges
-    # current_user.level_up
+    # current_user.delay(run_at: 45.seconds.from_now).level_up
     if @quest.save
       @quest.delay(run_at: @quest.quest_date).text_challenges
       redirect_to user_quests_path(current_user.id)
