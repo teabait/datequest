@@ -66,6 +66,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # API keys
 gem "figaro"
 
+gem 'rails_12factor', group: :production
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
