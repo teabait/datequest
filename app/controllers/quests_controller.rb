@@ -10,12 +10,14 @@ class QuestsController < ApplicationController
     quest_params[:acceptor] = params[:user_id]
     @quest = Quest.new(quest_params)
     @quest.assign_challenges(current_user)
-      text_challenges
+    current_user.delay(run_at: 45.seconds.from_now).level_up
+    # current_user.level_up
     if @quest.save
       redirect_to user_quests_path(current_user.id)
     else
       redirect_to root_path
     end
+      # @quest.delay(run_at: @quest.quest_date).text_challenges
   end
 
   def index
@@ -57,28 +59,5 @@ class QuestsController < ApplicationController
 
   def get_params
     params.require(:quest).permit(:location, :description, :quest_date)
-  end
-  def text_challenges
-    user1 = User.find_by(id: current_user.id)
-    # user2 = User.find_by(id: self.acceptor)
-    user1_number = user1.phone
-    # user2_number = user2.phone
-
-    @client ||= Twilio::REST::Client.new Figaro.env.twilio_sid, Figaro.env.twilio_token
-    @client.account.sms.messages.create(
-      :from => "+1#{Figaro.env.twilio_phone_number}",
-      :to => "+1#{user1_number}",
-      :body => "#{@quest.challenges[1].description}"
-    )
-    @client.account.sms.messages.create(
-      :from => "+1#{Figaro.env.twilio_phone_number}",
-      :to => "+1#{user1_number}",
-      :body => "#{@quest.challenges[2].description}"
-    )
-    @client.account.sms.messages.create(
-      :from => "+1#{Figaro.env.twilio_phone_number}",
-      :to => "+1#{user1_number}",
-      :body => "#{@quest.challenges[2].description}"
-    )
   end
 end

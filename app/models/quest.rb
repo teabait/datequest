@@ -24,4 +24,28 @@ class Quest < ActiveRecord::Base
   def end_challenge_window
     self.quest_date. + 5.hours
   end
+
+  def text_challenges
+    user1 = inviter
+    # user2 = User.find_by(id: self.acceptor)
+    user1_number = inviter.phone
+    # user2_number = user2.phone
+
+    @client ||= Twilio::REST::Client.new Figaro.env.twilio_sid, Figaro.env.twilio_token
+    @client.account.sms.messages.create(
+      :from => "+1#{Figaro.env.twilio_phone_number}",
+      :to => "+1#{user1_number}",
+      :body => "#{self.challenges[1].description}"
+    )
+    @client.account.sms.messages.create(
+      :from => "+1#{Figaro.env.twilio_phone_number}",
+      :to => "+1#{user1_number}",
+      :body => "#{self.challenges[2].description}"
+    )
+    @client.account.sms.messages.create(
+      :from => "+1#{Figaro.env.twilio_phone_number}",
+      :to => "+1#{user1_number}",
+      :body => "#{self.challenges[2].description}"
+    )
+  end
 end

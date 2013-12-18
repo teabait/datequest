@@ -47,6 +47,7 @@ end
 
 group :development do
   gem 'pry-rails'
+  gem 'foreman'
 end
 
 group :test do
@@ -67,6 +68,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem "figaro"
 
 gem 'rails_12factor', group: :production
+
+gem "daemons"
 
 # Use unicorn as the app server
 # gem 'unicorn'
