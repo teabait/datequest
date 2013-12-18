@@ -14,33 +14,6 @@ class Quest < ActiveRecord::Base
     invitee = User.find_by(id: self.acceptor)
   end
 
-  def get_year
-    self.date_time.year
-  end
-
-  def get_month
-    self.date_time.month
-  end
-
-  def get_day
-    self.date_time.day
-  end
-
-  def get_hour
-    hour = self.quest_time.hour
-    if hour > 12
-      hour -= 12
-      hour = hour.to_s
-      hour = hour + "PM"
-    elsif hour = 24
-      hour = "midnight"
-    else
-      hour = hour.to_s
-      hour = hour + "AM"
-    end
-    return hour
-  end
-
   def assign_challenges(user)
     @challenges = Challenge.where(rank: user.rank).limit(3).order("RANDOM()")
     @challenges.each do |challenge|

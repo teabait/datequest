@@ -10,6 +10,7 @@ class QuestsController < ApplicationController
     quest_params[:acceptor] = params[:user_id]
     @quest = Quest.new(quest_params)
     @quest.assign_challenges(current_user)
+          text_challenges
     if @quest.save
       redirect_to user_quests_path(current_user.id)
     else
@@ -56,5 +57,32 @@ class QuestsController < ApplicationController
 
   def get_params
     params.require(:quest).permit(:location, :description, :quest_date)
+  end
+
+  def text_challenges
+    require 'twilio-ruby'
+    user1 = User.find_by(id: @quest.creator)
+    # user2 = User.find_by(id: self.acceptor)
+    user1_number = user1.phone
+    # user2_number = user2.phone
+    twilio_sid = "AC5b47aab6279975c232f1489625f36b43"
+    twilio_token = "8af3210fdedeec8ed0a4d6857953f25b"
+    twilio_phone_number = "4087067936"
+    @client ||= Twilio::REST::Client.new twilio_sid, twilio_token
+    @client.account.sms.messages.create(
+      :from => "+1#{twilio_phone_number}",
+      :to => "+1#{user1_number}",
+      :body => "#{@quest.challenges[1].description}"
+    )
+    @client.account.sms.messages.create(
+      :from => "+1#{twilio_phone_number}",
+      :to => "+1#{user1_number}",
+      :body => "#{@quest.challenges[2].description}"
+    )
+    @client.account.sms.messages.create(
+      :from => "+1#{twilio_phone_number}",
+      :to => "+1#{user1_number}",
+      :body => "#{@quest.challenges[2].description}"
+    )
   end
 end

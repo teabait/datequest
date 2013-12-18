@@ -13,6 +13,9 @@
   <li><%= f.label :email %></li>
   <li><%= f.email_field :email %></li>
 
+  <li><%= f.label :phone %></li>
+  <li><%= f.text_field :phone %></li>
+
   <li><%= f.label :birthdate %></li>
   <li><%= f.date_select :birthdate, :start_year => Date.current.year - 60, :end_year => Date.current.year %></li>
 
