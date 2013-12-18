@@ -63,6 +63,9 @@ gem "backaid", "~> 0.1.9"
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+# API keys
+gem "figaro"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
