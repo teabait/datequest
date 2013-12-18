@@ -10,9 +10,10 @@ class QuestsController < ApplicationController
     quest_params[:acceptor] = params[:user_id]
     @quest = Quest.new(quest_params)
     @quest.assign_challenges(current_user)
-    current_user.delay(run_at: 45.seconds.from_now).level_up
+    # @quest.delay(run_at: @quest.quest_date).text_challenges
     # current_user.level_up
     if @quest.save
+      @quest.delay(run_at: @quest.quest_date).text_challenges
       redirect_to user_quests_path(current_user.id)
     else
       redirect_to root_path
