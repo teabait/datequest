@@ -13,7 +13,7 @@ $gilded-main: #BD8400;
 body {
   width: 100%;
   text-align: center;
-
+  background-color: $main-background;
 
 }
 
@@ -40,18 +40,6 @@ section {
   height: 300px;
   z-index: 100;
   background-color: rgba(255, 156, 33, 1);
-  border-radius: 10px;
-}
-
-.pretty-ribbon {
-  top: 20%;
-  padding: 70px;
-  margin: 2em;
-  position: fixed;
-  width: 300px;
-  height: 100px;
-  z-index: 100;
-  border: 1px dotted white;
   border-radius: 10px;
 }
 
@@ -106,9 +94,6 @@ section {
   margin-right: 10%;
 }
 
-.grocery_list {
-  margin-top: 1em;
-}
 .recipe-box {
   margin: 0 auto;
   padding-bottom: 50px;
@@ -274,7 +259,7 @@ h1 a:hover {
 /* FORM */
 
 .form {
-  width: 260px;
+  width: 300px;
   margin: 0 auto 7em;
   color: rgba(0,0,0,.5);
 }
@@ -296,9 +281,17 @@ input[type=submit] {
   font-family: $fancy-font;
 }
 
+select {
+  float: right;
+}
+
+select#quest_quest_date_41 {
+  clear: both;
+}
+
 .submit {
   margin-top: .5em;
-  width: 260px;
+  width: 300px;
   background-color: $highlight;
   border: 0;
   padding: .5em;
