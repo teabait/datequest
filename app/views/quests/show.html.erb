@@ -1,0 +1,9 @@
+<h2>This Quest's Challenges</h2>
+<% if DateTime.now >= @quest.quest_date && DateTime.now <= @quest.end_challenge_window %>
+  <% @challenges.each do |challenge| %>
+    <%= challenge.description %>
+  <% end %>
+<%else%>
+The time now is<%=DateTime.now%>. The Date's time is <%=@quest.quest_date%>.
+
+  <% end %>

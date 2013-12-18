@@ -46,9 +46,15 @@ class QuestsController < ApplicationController
     redirect_to user_quests_path
   end
 
+  def show
+    @quest = Quest.find_by(id: params[:id])
+    @challenges = @quest.challenges
+    render :show
+  end
+
   private
 
   def get_params
-    params.require(:quest).permit(:location, :description, :quest_time, :quest_date)
+    params.require(:quest).permit(:location, :description, :quest_date)
   end
 end

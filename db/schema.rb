@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131216233216) do
+ActiveRecord::Schema.define(version: 20131218011122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,14 +41,13 @@ ActiveRecord::Schema.define(version: 20131216233216) do
   end
 
   create_table "quests", force: true do |t|
-    t.string  "location"
-    t.integer "creator",                     null: false
-    t.integer "acceptor",                    null: false
-    t.boolean "accepted",    default: false
-    t.string  "description",                 null: false
-    t.boolean "rejected",    default: false
-    t.date    "quest_date",                  null: false
-    t.time    "quest_time",                  null: false
+    t.string   "location"
+    t.integer  "creator",                     null: false
+    t.integer  "acceptor",                    null: false
+    t.boolean  "accepted",    default: false
+    t.string   "description",                 null: false
+    t.boolean  "rejected",    default: false
+    t.datetime "quest_date",                  null: false
   end
 
   create_table "users", force: true do |t|

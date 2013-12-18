@@ -1,5 +1,4 @@
 class Quest < ActiveRecord::Base
-  validates :quest_time, presence: true
   validates :quest_date, presence: true
   validates :creator, presence: true
   validates :acceptor, presence: true
@@ -47,5 +46,9 @@ class Quest < ActiveRecord::Base
     @challenges.each do |challenge|
       self.challenges << challenge
     end
+  end
+
+  def end_challenge_window
+    self.quest_date. + 5.hours
   end
 end
