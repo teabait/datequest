@@ -235,7 +235,6 @@ h3 {
 .avatar{
     width: 275px;
     border: 10px solid $gilded-main;
-    border-radius: 50%;
     left: 0;
 }
 .avatar:after {
@@ -342,7 +341,7 @@ h3:after {
   background-color: gold;
   float: right;
   clear: both;
-  margin: .5em 1.5em;
+  margin: 0 1.5em 1em;
   position: relative;
   width: 135px;
   height: 20px;

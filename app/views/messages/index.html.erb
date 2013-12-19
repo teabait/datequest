@@ -1,6 +1,6 @@
 <h2><%=current_user.username%>'s inbox</h2>
 <% @messages.each do |m| %>
-      <p><%= m.sender%></p>
-      <p><%= m.subject%></p>
-      <p><%= m.content%></p>
+      <p>From: <%= m.sender%></p>
+      <p>Subject: <%= m.subject%></p>
+      <p>Body: <%= m.content%></p>
 <% end %>
