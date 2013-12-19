@@ -104,17 +104,47 @@ section {
   text-align: center;
 }
 
-.single-recipe {
-  width: 170px;
+.left-bar {
+  width: 500px;
   height: 170px;
   margin: 20px 10px 0;
   background-color: rgba(230, 219, 195, .3);
   position: relative;
   display: inline-block;
-  float: left;
   -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
   -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,.2);
+}
+
+.profile {
+  width: 500px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 1em;
+
+  .first-block {
+    height: auto;
+    text-align: left;
+  }
+
+  .second-block {
+    width: 300px;
+    text-align: center;
+  }
+
+  .third-block {
+    width: 90%;
+    margin: 2em auto;
+  }
+
+  .left-block {
+    width: 300px;
+    float: left;
+  }
+  .right-block {
+    float: right;
+    width: 200px;
+  }
 }
 
 /* NAV */
@@ -163,18 +193,15 @@ header {
 
 p {
   line-height: 1.2em;
+  font-family: $primary-font;
+  font-size: 1.2em;
+  color: rgba(0,0,0,.5);
 }
 
 .info-type {
   font-family: $fancy-font;
   text-align: center;
   line-height: 1.2em;
-  color: rgba(0,0,0,.5);
-}
-
-.ingredients {
-  font-family: Tahoma, Verdana, Segoe, sans-serif;
-  font-size: 13px;
   color: rgba(0,0,0,.5);
 }
 
@@ -189,7 +216,7 @@ h1 {
 }
 
 h2 {
-  font-family:  $primary-font;
+  font-family:  $fancy-font;
   font-size: 1.2em;
   color: rgba(0,0,0,.75);
 
@@ -206,9 +233,10 @@ h3 {
 
 /* IMAGES */
 .avatar{
-    width: 200px;
+    width: 275px;
     border: 10px solid $gilded-main;
     border-radius: 50%;
+    left: 0;
 }
 .avatar:after {
   content: "";
@@ -238,18 +266,6 @@ a:hover {
 
 h1 a {
   color: rgba(255,255,255,1);
-}
-
-a.heart {
-  margin: 1.5em .5em 1em 0;
-  float: right;
-  color: rgba(254, 153, 168, 1);
-}
-
-a.heart:hover {
-  transform:scale(1.2);
-  -moz-transform:scale(1.2);
-  -webkit-transform:scale(1.2);
 }
 
 h1 a:hover {
@@ -320,4 +336,22 @@ h3:after {
 .submit:hover {
   background-color: gold;
   cursor: pointer;
+}
+
+.profile-button {
+  background-color: gold;
+  float: right;
+  clear: both;
+  margin: .5em 1.5em;
+  position: relative;
+  width: 135px;
+  height: 20px;
+  padding: .5em;
+  font-family: $fancy-font;
+  text-align: center;
+}
+
+.profile-button:hover {
+  background-color: $highlight;
+  color: gold;
 }

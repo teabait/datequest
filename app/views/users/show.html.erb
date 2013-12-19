@@ -1,7 +1,10 @@
 
-  <div>
-    <div>
-      <img class="avatar" src="<%=@user.avatar%>" alt="" >
+  <div class="profile">
+    <div class= "first-block">
+        <div class="left-block">
+          <img class="avatar" src="<%=@user.avatar%>" alt="" >
+        </div>
+        <div class="right-block">
       <% if current_user == @user %>
         <%= link_to 'edit profile', edit_user_path(@user), :method => :get, class: "profile-button"%>
         <%= link_to 'quests', user_quests_path(@user), :method => :get, class: "profile-button"%>
@@ -11,12 +14,13 @@
         <%= link_to 'ask out', new_user_quest_path(@user), :method => :get, :id => "ask", class: "profile-button"%>
         <%= link_to 'message me', new_user_message_path(@user), :method => :get, :id => "message", class: "profile-button"%>
       <% end %>
+      </div>
     </div>
-      <div>
+      <div class = "second-block">
         <h2><%= @user.username.downcase %> / <%= @user.age %> / <%= @user.location %></h2>
         <h2> rank: <%= @user.rank_name %> </h2>
       </div>
-    <div>
+    <div class = "third-block">
       <p>
         <%= @user.blurb %>
       </p>
