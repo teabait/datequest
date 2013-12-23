@@ -23,11 +23,7 @@ class QuestsController < ApplicationController
   end
 
   def index
-    @quests = Quest.where(
-      acceptor: current_user.id,
-      accepted: false,
-      rejected: false
-    )
+    @quests = current_user.new_quests
     @sent_quests = Quest.where(creator: current_user.id)
     @upcoming_quests = Quest.where(
       acceptor: current_user.id,

@@ -23,4 +23,12 @@ class User < ActiveRecord::Base
     self.rank += 1
     self.save
   end
+
+  def new_quests
+    Quest.where(
+      acceptor: self.id,
+      accepted: false,
+      rejected: false
+    )
+  end
 end

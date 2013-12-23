@@ -10,6 +10,6 @@ FactoryGirl.define do
     password 'secret'
     password_confirmation { |u| u.password }
     location "Oakland"
-    phone 9252342369
+    phone 15005550006
   end
 end
