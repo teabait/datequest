@@ -40,12 +40,10 @@ class QuestsController < ApplicationController
     @quest = Quest.find_by(id: params[:id])
     if params[:rejected] == "true"
       flash[:notice] = "You rejected the user"
-      @quest.rejected = true
-      @quest.accepted = false
+      @quest.reject
     else
       flash[:notice] = "You are going to go on a date!"
-      @quest.accepted = true
-      @quest.rejected = false
+      @quest.accept
     end
     @quest.save
     redirect_to user_quests_path

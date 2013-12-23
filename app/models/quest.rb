@@ -27,9 +27,9 @@ class Quest < ActiveRecord::Base
 
   def text_challenges
     user1 = inviter
-    # user2 = User.find_by(id: self.acceptor)
+    user2 = invitee
     user1_number = inviter.phone
-    # user2_number = user2.phone
+    user2 = invitee.phone
 
     @client ||= Twilio::REST::Client.new Figaro.env.twilio_sid, Figaro.env.twilio_token
     @client.account.sms.messages.create(
@@ -45,7 +45,17 @@ class Quest < ActiveRecord::Base
     @client.account.sms.messages.create(
       :from => "+1#{Figaro.env.twilio_phone_number}",
       :to => "+1#{user1_number}",
-      :body => "#{self.challenges[2].description}"
+      :body => "#{self.challenges[0].description}"
     )
+  end
+
+  def accept
+    self.accepted = true
+    self.rejected = false
+  end
+
+  def reject
+    self.rejected = true
+    self.accepted = false
   end
 end

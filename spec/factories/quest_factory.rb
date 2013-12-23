@@ -6,7 +6,6 @@ FactoryGirl.define do
     accepted false
     description "pizza rolls"
     rejected false
-    quest_date "2013-12-16"
-    quest_time "14:56:50"
+    quest_date "2013-12-18 15:36:00"
   end
 end

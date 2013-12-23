@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
   end
 
   def level_up
-    puts "WHEEEEEEEEE"
     self.rank += 1
     self.save
   end

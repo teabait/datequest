@@ -7,4 +7,9 @@ class Message  < ActiveRecord::Base
     sender = User.find_by(id: self.sender_id)
     sender.username
   end
+
+  def receiver
+    receiver = User.find_by(id: self.receiver_id)
+    receiver.username
+  end
 end
