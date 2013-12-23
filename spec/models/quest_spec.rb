@@ -49,11 +49,20 @@ describe Quest do
   end
 
   describe "#text_challenges" do
+    before (:each) do
+      100.times do FactoryGirl.create(:challenge) end
+      @quest.assign_challenges(@remy)
+      @quest.save
+    end
     before do
+      @remy = FactoryGirl.create(:user)
+      @daffodil = FactoryGirl.create(:user)
+      @quest.creator = @remy.id
+      @quest.acceptor = @daffodil.id
       @quest.assign_challenges(@remy)
     end
     it "sends a text to the users who are on a date" do
-      expect(@quest.text_challenges).to have(0).errors
+      expect(@quest.text_challenges).to_not raise_error
     end
   end
 
