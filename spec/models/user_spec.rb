@@ -30,4 +30,41 @@ describe User do
       expect(@remy.age).to eq(23)
     end
   end
+
+  describe "#new_quests" do
+    it "only returns unaccepted and unrejected quests" do
+      quest = FactoryGirl.create(:quest)
+      remy = FactoryGirl.create(:user)
+      daffodil = FactoryGirl.create(:user)
+      quest.creator = remy.id
+      quest.acceptor = daffodil.id
+      quest.save
+      expect(daffodil.new_quests.count).to eq(1)
+    end
+  end
+
+  describe "#sent_quests" do
+    it "only returns sent quests" do
+      quest = FactoryGirl.create(:quest)
+      remy = FactoryGirl.create(:user)
+      daffodil = FactoryGirl.create(:user)
+      quest.creator = remy.id
+      quest.acceptor = daffodil.id
+      quest.save
+      expect(remy.sent_quests.count).to eq(1)
+    end
+  end
+
+  describe "#upcoming_quests" do
+    it "returns quests where users have accepted" do
+      quest = FactoryGirl.create(:quest)
+      remy = FactoryGirl.create(:user)
+      daffodil = FactoryGirl.create(:user)
+      quest.creator = remy.id
+      quest.acceptor = daffodil.id
+      quest.accept
+      quest.save
+      expect(daffodil.upcoming_quests.count).to eq(1)
+    end
+  end
 end

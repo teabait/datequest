@@ -24,11 +24,8 @@ class QuestsController < ApplicationController
 
   def index
     @quests = current_user.new_quests
-    @sent_quests = Quest.where(creator: current_user.id)
-    @upcoming_quests = Quest.where(
-      acceptor: current_user.id,
-      accepted: true
-    )
+    @sent_quests = current_user.sent_quests
+    @upcoming_quests = current_user.upcoming_quests
     render :index
   end
 

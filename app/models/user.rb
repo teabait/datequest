@@ -31,4 +31,15 @@ class User < ActiveRecord::Base
       rejected: false
     )
   end
+
+  def sent_quests
+    Quest.where(creator: self.id)
+  end
+
+  def upcoming_quests
+    Quest.where(
+      acceptor: self.id,
+      accepted: true
+    )
+  end
 end
