@@ -60,8 +60,6 @@ group :development, :test do
   gem 'jasmine', github: 'pivotal/jasmine-gem'
 end
 
-gem "backaid", "~> 0.1.9"
-
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
