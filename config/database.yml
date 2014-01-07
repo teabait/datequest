@@ -50,11 +50,3 @@ test:
   pool: 5
   username: T-Virus
   password:
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: datequest_production
-  pool: 5
-  username: T-Virus
-  password:
