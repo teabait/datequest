@@ -1,3 +1,2 @@
 web: bundle exec rails server -p $PORT
-worker:  bundle exec rake jobs:work
-web: rake jobs:work
+web: bundle exec rake jobs:work
