@@ -14,13 +14,20 @@ class MessagesController < ApplicationController
     else
       redirect_to root_path
     end
-
   end
 
   def index
     @messages = Message.where(
       receiver_id: current_user.id
     )
+  end
+
+  def show
+    @messages = Message.find(params[:id])
+    respond_to do |format|
+      format.html {render nothing: true}
+      format.json { render json: @messages}
+    end
   end
 
   private

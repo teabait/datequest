@@ -147,6 +147,17 @@ section {
   }
 }
 
+.invite {
+  border: 2px solid blue;
+  height: 350px;
+  width: 250px;
+}
+
+.message-list {
+  li{
+  display: inline;
+  }
+}
 /* NAV */
 
 nav {
@@ -219,7 +230,6 @@ h2 {
   font-family:  $fancy-font;
   font-size: 1.2em;
   color: rgba(0,0,0,.75);
-
 }
 
 h3 {
@@ -230,6 +240,7 @@ h3 {
   color: $highlight;
 
 }
+
 
 /* IMAGES */
 .avatar{
@@ -244,6 +255,10 @@ h3 {
   background-color: red;
 }
 
+.thumbnail {
+  width: 200px;
+  border: 5px solid $gilded-main;
+}
 .large-image {
   border: 5px solid rgba(230, 219, 195, .3);
   border-radius: 10px;
