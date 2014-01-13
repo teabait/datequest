@@ -153,10 +153,28 @@ section {
   width: 250px;
 }
 
-.message-list {
-  li{
-  display: inline;
+#inbox {
+  width: 40%;
+  float: left;
+  border: 5px solid yellow;
+  li {
+    display: inline;
+    margin: 0 3em;
+    overflow: hidden;
   }
+}
+.message-list {
+  border: 5px solid blue;
+  clear: both;
+  margin: 0 auto;
+}
+
+#reader {
+  width: 50%;
+  float: right;
+}
+#message-column {
+  border: 5px solid red;
 }
 /* NAV */
 
@@ -289,7 +307,7 @@ h1 a:hover {
 /* FORM */
 
 .form {
-  width: 27em;
+  width: 30em;
   margin: 0 auto 7em;
   color: rgba(0,0,0,.5);
 }
@@ -311,15 +329,29 @@ input {
 
 input[type=submit] {
   font-family: $fancy-font;
-}
-
-select {
-  float: right;
-}
-
-select#quest_quest_date_41 {
+  width: 100%;
+  margin: .5em auto;
+  height: 2.3em;
+  background-color: $highlight;
+  border: 0;
+  padding: .5em;
+  color: white;
   clear: both;
+  font-size: 1.5em;
 }
+
+input[type=submit]:hover {
+  background-color: gold;
+  cursor: pointer;
+}
+
+/*select {
+  float: left;
+}*/
+
+/*select#quest_quest_date_41 {
+  clear: both;
+}*/
 
 .submit {
   margin: .5em auto;
@@ -331,7 +363,6 @@ select#quest_quest_date_41 {
   color: white;
   clear: both;
   font-size: 1.5em;
-
 }
 
 h3:before, h3:after {
