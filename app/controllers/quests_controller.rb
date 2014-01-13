@@ -14,7 +14,7 @@ class QuestsController < ApplicationController
     # @quest.delay(run_at: @quest.quest_date).text_challenges
     # current_user.delay(run_at: 45.seconds.from_now).level_up
     if @quest.save
-      @quest.delay(run_at: @quest.quest_date).text_challenges
+      session[:user_id] = @user.id
       redirect_to user_quests_path(current_user.id)
     else
       redirect_to root_path
@@ -37,6 +37,7 @@ class QuestsController < ApplicationController
     else
       flash[:notice] = "You are going to go on a date!"
       @quest.accept
+      @quest.delay(run_at: @quest.quest_date).text_challenges
     end
     @quest.save
     redirect_to user_quests_path
