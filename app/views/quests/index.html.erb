@@ -26,6 +26,27 @@
     <% end %>
   </div>
   </section>
+  <section class="profile inbox">
+  <h3>Accepted quests</h3>
+    <% @upcoming_quests.each do |q| %>
+      <div class="left date">
+        <div class="invite">
+          <img class = "thumbnail" src="<%= q.inviter.avatar %>">
+          <p class = "date-invite">
+            You and
+            <em><%= q.inviter.username %></em>
+            are going to
+            <em><%= q.location %></em>
+            so you two can
+            <em><%= q.description %></em>
+            on
+            <em><%= q.quest_date %></em>
+          </p>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </section>
 </div>
 
 
