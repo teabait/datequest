@@ -17,6 +17,7 @@ class UsersController < ApplicationController
     if @user.age < 18
       redirect_to new_user_path, notice: "YOU ARE TOO YOUNG"
     elsif @user.save
+      session[:user_id] = @user.id
       redirect_to root_path
     else
       render :new
