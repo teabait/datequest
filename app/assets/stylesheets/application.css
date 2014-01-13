@@ -11,4 +11,6 @@
  *= require_self
  *= require jquery.datetimepicker
  *= require_tree .
+ *= require skeleton
+ *= require layout
  */

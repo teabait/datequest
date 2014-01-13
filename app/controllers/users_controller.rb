@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       redirect_to new_user_path, notice: "YOU ARE TOO YOUNG"
     elsif @user.save
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
       render :new
     end
