@@ -1,76 +1,30 @@
 <% flash.each do|name, msg| %>
   <%= msg %>
 <% end %>
-<div class="container">
-  <section class="one-third column inbox">
-  <h2>pending quests</h2>
-    <% @quests.each do |q| %>
-      <div class="invite">
-        <img class = "thumbnail" src="<%= q.inviter.avatar %>">
-        <p class = "date-invite">
-          <em><%= q.inviter.rank_name%></em>
-          <em><%= q.inviter.username %></em>
-          invites you to
-          <em><%= q.location %></em>
-          so you two can
-          <em><%= q.description %></em>
-          on
-          <em><%= q.quest_date %></em>
-        </p>
 
-      <%= button_to "Accept", { action: "update", id: q.id , accepted: true}, method: :patch%>
-      <%= button_to "Decline", { action: "update", id: q.id , rejected: true}, method: :patch%>
+  <section class="profile inbox">
+  <h3>pending quests</h3>
+    <% @quests.each do |q| %>
+      <div class="left date">
+        <div class="invite">
+          <img class = "thumbnail" src="<%= q.inviter.avatar %>">
+          <p class = "date-invite">
+            <em><%= q.inviter.username %></em>
+            invites you to
+            <em><%= q.location %></em>
+            so you two can
+            <em><%= q.description %></em>
+            on
+            <em><%= q.quest_date %></em>
+          </p>
+        </div>
+      </div>
+      <div class="right">
+        <%= button_to "Accept", { action: "update", id: q.id , accepted: true}, method: :patch%>
+        <%= button_to "Decline", { action: "update", id: q.id , rejected: true}, method: :patch%>
+      </div>
     <% end %>
   </div>
-  </section>
-
-  <section class="one-third column inbox">
-  <h2>sent quest invites</h2>
-    <% @sent_quests.each do |q| %>
-      <div class="invite">
-        <img class = "thumbnail" src="<%= q.invitee.avatar %>">
-        <p class = "date-invite">
-          <em><%= q.invitee.rank_name%></em>
-          <em><%= q.invitee.username %></em>
-          Location:
-          <em><%= q.location %></em>
-          Description:
-          <em><%= q.description %></em>
-          on:
-          <em><%= q.quest_date %></em>
-        </p>
-
-        <% if q.accepted %>
-          They accept your invite!
-        <% elsif q.rejected %>
-          They rejected your invite! Sadz.
-        <% else %>
-          PENDING
-        <% end %>
-      </div>
-    <% end %>
-  </section>
-  <section class="one-third column inbox">
-    <h2>upcoming quests</h2>
-
-    <% @upcoming_quests.each do |q| %>
-      <div class="invite">
-        <img class = "thumbnail" src="<%= q.inviter.avatar %>">
-        <p class = "date-invite">
-          You are going with
-          <em><%= q.inviter.username %></em>
-          to
-          <em><%= q.location %></em>
-          so you two can
-          <em><%= q.description %></em>
-          on
-          <em><%= q.quest_date %></em>
-        </p>
-
-     YAY!
-      </div>
-    <% end %>
-    </div>
   </section>
 </div>
 

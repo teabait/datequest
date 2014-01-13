@@ -1,11 +1,11 @@
-<h2><%=current_user.username%>'s inbox</h2>
+<h3><%=current_user.username%>'s inbox</h3>
 <div id="inbox">
-  <li class="info-type">From</li>
-  <li class="info-type">Subject</li>
+  <li class="labeled">From</li>
+  <li class="labeled">Subject</li>
   <% @messages.each do |m| %>
-    <div class="message-list">
-        <li class="info-type get_message" id="<%= m.id %>"><%= m.sender%></li>
-        <li class="info-type get_message" id="<%= m.id %>"><%= m.subject%></li>
+    <div class="message-list get_message" id="<%= m.id %>">
+        <li class="info-type"><%= m.sender%></li>
+        <li class="info-type"><%= m.subject%></li>
     </div>
   <% end %>
 </div>

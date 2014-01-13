@@ -94,16 +94,6 @@ section {
   margin-right: 10%;
 }
 
-.recipe-box {
-  margin: 0 auto;
-  padding-bottom: 50px;
-  width: 80%;
-  height: 100%;
-  height: 1%;
-  overflow: hidden;
-  text-align: center;
-}
-
 .left-bar {
   width: 500px;
   height: 170px;
@@ -148,15 +138,15 @@ section {
 }
 
 .invite {
-  border: 2px solid blue;
   height: 350px;
   width: 250px;
 }
 
 #inbox {
   width: 40%;
-  float: left;
-  border: 5px solid yellow;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: gray;
   li {
     display: inline;
     margin: 0 3em;
@@ -164,17 +154,26 @@ section {
   }
 }
 .message-list {
-  border: 5px solid blue;
   clear: both;
   margin: 0 auto;
+  li {
+    color: white;
+  }
 }
 
 #reader {
-  width: 50%;
-  float: right;
+  margin-top: 2em;
+  font-family:  $fancy-font;
+  font-size: 1.2em;
+  width: 100%;
+  color: $gilded-main;
+
 }
 #message-column {
-  border: 5px solid red;
+}
+
+.single {
+  margin: 2em;
 }
 /* NAV */
 
@@ -259,6 +258,11 @@ h3 {
 
 }
 
+.labeled {
+  font-family:  $fancy-font;
+  font-size: 1.2em;
+  color: rgba(0,0,0,.75);
+}
 
 /* IMAGES */
 .avatar{
@@ -304,15 +308,23 @@ h1 a:hover {
   color: rgba(255, 156, 33, 1);
 }
 
+.message-list {
+  padding: 1em;
+}
+.message-list:hover {
+  background-color: $highlight;
+  cursor: pointer;
+}
+
 /* FORM */
 
 .form {
-  width: 30em;
+  width: 27em;
   margin: 0 auto 7em;
   color: rgba(0,0,0,.5);
 }
 
-label{
+label {
   float: left;
   margin: .3em 0 1em;
   font-family: $fancy-font;
@@ -345,13 +357,15 @@ input[type=submit]:hover {
   cursor: pointer;
 }
 
-/*select {
+select {
   float: left;
-}*/
+}
 
-/*select#quest_quest_date_41 {
+select#quest_quest_date_41 {
   clear: both;
-}*/
+  position: absolute;
+  margin-left: 3em;
+}
 
 .submit {
   margin: .5em auto;

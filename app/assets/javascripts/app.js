@@ -12,7 +12,7 @@ function getMessage(callback){
 function messageCall(message){
   var reader = $("#reader");
   var column = $("<div id='message-column'>");
-  var content = $("<li>" + message.content + "</li>");
+  var content = $("<li>" + "''" + message.content + "''" +  "</li>");
   // var subject = $("<li>").text(message.subject);
   // var content = $("<p>").text(message.content);
   reader.empty();
