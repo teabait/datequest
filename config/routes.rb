@@ -5,5 +5,5 @@ DateQuest::Application.routes.draw do
   end
   resource :session, only: [:new, :create, :destroy]
   resource :welcome, only: [:show]
-  root to: 'app#index'
+  root to: 'users#new'
 end
